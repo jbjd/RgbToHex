@@ -24,21 +24,8 @@ int main(int argc, char* argv[]){
 		}
 		for(j = 0; j < len; ++j){
 			thisChar = argv[i][j];
-			switch(thisChar){
-				case '0':
-				case '1':
-				case '2':
-				case '3':
-				case '4':
-				case '5':
-				case '6':
-				case '7':
-				case '8':
-				case '9':
-					break;
-				default:
-					goto INVALID_INPUT;
-					break;
+			if(thisChar < '0' || thisChar > '9'){
+				goto INVALID_INPUT;
 			}
 			temp = (temp*10) + (thisChar - 48);
 		}
